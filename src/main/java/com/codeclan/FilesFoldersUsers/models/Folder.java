@@ -16,7 +16,7 @@ public class Folder {
     private String title;
 
 //    @JsonIgnore
-    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "folder")
     private List<File> folderOfFiles;
 
     @ManyToOne
@@ -26,7 +26,7 @@ public class Folder {
     public Folder(String title, User user) {
         this.title = title;
         this.user = user;
-        this.folderOfFiles = new ArrayList<File>();
+//        this.folderOfFiles = new ArrayList<File>();
     }
 
     public Folder() {
@@ -60,5 +60,11 @@ public class Folder {
         this.folderOfFiles.add(file);
     }
 
+    public List<File> getFolderOfFiles() {
+        return folderOfFiles;
+    }
 
+    public void setFolderOfFiles(List<File> folderOfFiles) {
+        this.folderOfFiles = folderOfFiles;
+    }
 }

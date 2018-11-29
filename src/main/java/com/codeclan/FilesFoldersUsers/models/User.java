@@ -4,6 +4,7 @@ package com.codeclan.FilesFoldersUsers.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,6 +24,7 @@ public class User {
 
     public User(String name) {
         this.name = name;
+        this.folders = new ArrayList<Folder>();
     }
 
     public User() {
@@ -44,5 +46,19 @@ public class User {
         return this.folders.size();
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Folder> getFolders() {
+        return folders;
+    }
+
+    public void setFolders(List<Folder> folders) {
+        this.folders = folders;
+    }
 }

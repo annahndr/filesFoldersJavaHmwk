@@ -22,10 +22,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     UserRepository userRepository;
-
-    public DataLoader() {
-
-    }
+    
 
     public void run(ApplicationArguments args) {
         User person1 = new User("Mina");
